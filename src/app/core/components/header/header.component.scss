@@ -1,0 +1,8 @@
+@use "src/assets/styles/colors" as col;
+@use "src/assets/styles/mixins" as mix;
+@import "src/assets/styles/media" ;
+.links{
+  @include mix.flex-center;
+  column-gap: 1rem;
+  margin-inline-start: 1rem;
+}

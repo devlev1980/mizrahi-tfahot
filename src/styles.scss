@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@use "assets/styles/reset.scss";
+@use "assets/styles/normalize.scss";
+@import "assets/styles/variables.scss";
+@import "assets/styles/mixins.scss";
+@import "assets/styles/typography.scss";
+@import "assets/styles/media";
+
+html {
+  //This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+
+  @include screen("laptop") {
+    // width < 1200?
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include screen("tablet") {
+    // width < 900?
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include screen("mobile") {
+    // width < 600?
+    font-size: 62.5%; //1 rem = 10px, 10/16 * 100% = 62.5%
+  }
+
+  @include screen("desktop") {
+    font-size: 75%; //1rem = 12, 12/16 * 100% = 75%
+  }
+}

@@ -1,0 +1,20 @@
+@use 'src/assets/styles/colors' as col;
+@use 'src/assets/styles/mixins' as mix;
+@import "src/assets/styles/media";
+
+.container{
+  display: grid;
+  grid-template-rows: 50px calc(100vh - 50px) auto;
+  height: 100vh;
+
+  .main{
+    margin-block-start: mix.pxToRem(50);
+    max-height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+  .footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+}

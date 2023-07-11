@@ -1,0 +1,19 @@
+<ng-container *ngIf="dogs$ | async as dogs">
+  <form [formGroup]="form">
+    <app-custom-select  [options]="$any (dogs)  | keyvalue" formControlName="dogKind">
+    </app-custom-select>
+
+    <app-custom-select [options]="['1','2']  | keyvalue" >
+
+    </app-custom-select>
+    <div *ngIf="images | async as images" class="dog-images">
+      <div *ngFor="let image of images" (click)="onFullScreen()" class="image">
+        <img [src]="image" alt=""  >
+      </div>
+    </div>
+  </form>
+</ng-container>
+
+
+
+
