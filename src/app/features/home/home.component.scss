@@ -2,6 +2,16 @@
 @use 'src/assets/styles/mixins' as mix;
 @import "src/assets/styles/media";
 
+fieldset{
+  border: 1px solid ;
+  max-width: mix.pxToRem(400);
+  @include mix.flex-center-column;
+  margin: 0 auto;
+
+  .dogs-form{
+    @include mix.flex-column;
+  }
+}
 .dog-images{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px , 1fr));

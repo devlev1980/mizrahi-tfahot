@@ -1,17 +1,21 @@
 <ng-container *ngIf="dogs$ | async as dogs">
-  <form [formGroup]="form">
+  <fieldset>
+    <legend>Choose your dog</legend>
+  <form [formGroup]="form" class="dogs-form">
     <app-custom-select  [options]="$any (dogs)  | keyvalue" formControlName="dogKind">
     </app-custom-select>
 
-    <app-custom-select [options]="['1','2']  | keyvalue" >
+    <app-custom-select [options]="numberOfDogs | keyvalue: compare " formControlName="numberOfCards">
 
     </app-custom-select>
-    <div *ngIf="images | async as images" class="dog-images">
-      <div *ngFor="let image of images" (click)="onFullScreen()" class="image">
-        <img [src]="image" alt=""  >
-      </div>
-    </div>
+
   </form>
+  </fieldset>
+  <div *ngIf="images | async as images" class="dog-images">
+    <div *ngFor="let image of images | slice : 1 : (selectedNumber | async) " (click)="onFullScreen()" class="image">
+      <img [src]="image" alt=""  >
+    </div>
+  </div>
 </ng-container>
 
 
