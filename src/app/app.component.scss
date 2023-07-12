@@ -1,18 +1,26 @@
-@use 'src/assets/styles/colors' as col;
-@use 'src/assets/styles/mixins' as mix;
+@use "src/assets/styles/colors" as col;
+@use "src/assets/styles/mixins" as mix;
 @import "src/assets/styles/media";
 
-.container{
+.container {
   display: grid;
   grid-template-rows: 50px calc(100vh - 50px) auto;
   height: 100vh;
 
-  .main{
-    margin-block-start: mix.pxToRem(50);
+  .main {
+    margin-block-start: mix.pxToRem(15);
     max-height: calc(100vh - 50px);
     overflow-y: auto;
+    margin-block-end: mix.pxToRem(68);
+    background-color: #3a506b;
+    z-index: 1;
+
+    @include screen("mobile") {
+      margin-block-start: mix.pxToRem(5);
+      margin-block-end: mix.pxToRem(65);
+    }
   }
-  .footer{
+  .footer {
     position: fixed;
     bottom: 0;
     width: 100%;

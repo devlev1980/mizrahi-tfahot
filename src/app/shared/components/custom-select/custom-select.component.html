@@ -1,11 +1,24 @@
 <mat-form-field>
-  <mat-label>Choose your dog</mat-label>
+  <mat-label>{{ label }}</mat-label>
   <mat-select>
-<!--    <mat-option *ngFor="let dog of  dogs  | keyvalue" [value]="dog.value">-->
-<!--      <span>{{dog.key}}</span>-->
-<!--    </mat-option>-->
-    <mat-option  *ngFor="let dog of  options " [value]="dog.value" (click)="onSelectValue(dog.key)" >
-      <span>{{dog.key}}</span>
-    </mat-option>
+    <ng-container *ngIf="!isByNumberOfCards; else byNumbers">
+      <mat-option
+        *ngFor="let option of options | filter"
+        [value]="option.key"
+        (click)="onSelectValue(option.key)"
+      >
+        <span>{{ option.key }}</span>
+      </mat-option>
+    </ng-container>
+
+    <ng-template #byNumbers>
+      <mat-option
+        *ngFor="let option of options"
+        [value]="+option.key + 1"
+        (click)="onSelectValueNumber(+option.key + 1)"
+      >
+        <span>{{ +option.key + 1 }}</span>
+      </mat-option>
+    </ng-template>
   </mat-select>
 </mat-form-field>

@@ -1,7 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {ApiService} from '../../core/services/api.service';
-import {filter, Observable, switchMap, tap} from 'rxjs';
-import {group} from '@angular/animations';
+import {Observable, switchMap} from 'rxjs';
 import {Dog} from './models/dog-kind';
 import {FormGroup} from '@angular/forms';
 import {DogFormService} from './services/dog-form.service';
@@ -9,7 +8,8 @@ import {DogFormService} from './services/dog-form.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit{
    form!: FormGroup;
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit{
   constructor(private api: ApiService,private dogFormService: DogFormService) {
   }
  ngOnInit() {
-    this.numberOfDogs = [...Array(50)].map((item,index)=> `${index+1}`);
+    this.numberOfDogs = [...Array(50)].map((_,index)=> `${index++}`);
    this.form = this.dogFormService.getDogsForm();
    this.dogs$ = this.api.dogs$;
 

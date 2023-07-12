@@ -1,0 +1,8 @@
+@use "src/assets/styles/colors" as col;
+@use "src/assets/styles/mixins" as mix;
+@import "src/assets/styles/media";
+
+p {
+  text-align: center;
+  width: 100%;
+}

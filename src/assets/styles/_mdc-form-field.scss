@@ -1,0 +1,49 @@
+@use "src/assets/styles/colors" as col;
+@use "src/assets/styles/mixins" as mix;
+@import "src/assets/styles/media";
+
+.mat-mdc-form-field {
+  width: 100%;
+
+  .mat-mdc-text-field-wrapper {
+    background-color: #00a5cf;
+
+    .mdc-floating-label {
+      color: #ffffff !important;
+      font-size: mix.pxToRem(18);
+    }
+    .mat-mdc-select-arrow {
+      color: #ffffff;
+    }
+    .mat-mdc-select-value {
+      color: #ffffff !important;
+    }
+  }
+}
+
+.mat-mdc-select-panel {
+  background-color: #00a5cf;
+  .mat-mdc-option {
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  .mdc-list-item__primary-text {
+    color: #ffffff;
+  }
+  .mdc-list-item--selected {
+    .mdc-list-item__primary-text {
+      color: #ffffff !important;
+      font-weight: 600;
+    }
+  }
+}
+.mat-pseudo-checkbox {
+  &:after {
+    color: #ffffff !important;
+  }
+}
+.mat-toolbar.mat-primary {
+  background-color: #00a5cf;
+}

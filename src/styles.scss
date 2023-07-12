@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-@use "assets/styles/reset.scss";
-@use "assets/styles/normalize.scss";
-@import "assets/styles/variables.scss";
-@import "assets/styles/mixins.scss";
-@import "assets/styles/typography.scss";
+@use "assets/styles/reset";
+@use "assets/styles/normalize";
+@import "assets/styles/variables";
+@import "assets/styles/mixins";
+@import "assets/styles/typography";
+@import "assets/styles/mdc-form-field";
+@import "assets/styles/scroll";
 @import "assets/styles/media";
 
 html {
