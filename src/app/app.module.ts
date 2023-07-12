@@ -6,8 +6,10 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
-import {CoreModule} from './core/core.module';
-import {ApiService} from './core/services/api.service';
+import { CoreModule } from './core/core.module';
+import { ApiService } from './core/services/api.service';
+import { MaterialModule } from './material.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +19,8 @@ import {ApiService} from './core/services/api.service';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatInputModule,
-    CoreModule
+    CoreModule,
+    MaterialModule,
   ],
   providers: [ApiService],
   bootstrap: [AppComponent],

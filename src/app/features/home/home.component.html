@@ -11,7 +11,7 @@
 
       <app-custom-select
         [isByNumberOfCards]="true"
-        [options]="numberOfDogs | keyvalue : compare"
+        [options]="numberOfDogs | keyvalue : compareFn"
         formControlName="numberOfCards"
         [label]="'Choose number of pics'"
       >
