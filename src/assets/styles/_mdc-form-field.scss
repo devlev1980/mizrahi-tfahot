@@ -6,44 +6,46 @@
   width: 100%;
 
   .mat-mdc-text-field-wrapper {
-    background-color: #00a5cf;
+    border: 1px solid col.$primary;
 
     .mdc-floating-label {
-      color: #ffffff !important;
+      color: col.$primary !important;
       font-size: mix.pxToRem(18);
     }
     .mat-mdc-select-arrow {
-      color: #ffffff;
+      color: col.$primary;
     }
     .mat-mdc-select-value {
-      color: #ffffff !important;
+      color: col.$secondary !important;
+      font-size: mix.pxToRem(18);
     }
   }
 }
 
 .mat-mdc-select-panel {
-  background-color: #00a5cf;
+  background-color: col.$white;
+  border: 1px solid col.$primary;
   .mat-mdc-option {
     &:not(:last-child) {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid col.$border;
     }
   }
 
   .mdc-list-item__primary-text {
-    color: #ffffff;
+    color: col.$secondary;
   }
   .mdc-list-item--selected {
     .mdc-list-item__primary-text {
-      color: #ffffff !important;
+      color: col.$primary !important;
       font-weight: 600;
     }
   }
 }
 .mat-pseudo-checkbox {
   &:after {
-    color: #ffffff !important;
+    color: col.$primary !important;
   }
 }
 .mat-toolbar.mat-primary {
-  background-color: #00a5cf;
+  background-color: col.$primary;
 }

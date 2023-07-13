@@ -1,0 +1,15 @@
+@use "src/assets/styles/colors" as col;
+@use "src/assets/styles/mixins" as mix;
+@import "src/assets/styles/media";
+.container {
+  @include mix.flex-center-column;
+  color: col.$white;
+  height: 100%;
+
+  h1 {
+    font-size: mix.pxToRem(46);
+  }
+  p {
+    font-size: mix.pxToRem(32);
+  }
+}
