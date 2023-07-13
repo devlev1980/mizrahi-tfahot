@@ -7,7 +7,7 @@
         [value]="option.key"
         (click)="onSelectValue(option.key)"
       >
-        <span>{{ option.key }}</span>
+        <span>{{ option.key | titlecase }}</span>
       </mat-option>
     </ng-container>
 

@@ -32,19 +32,20 @@
     height: 100%;
     z-index: 100;
 
-    .mat-spinner {
+    .wrapper {
       width: 60px;
       height: 60px;
       background-color: #fff;
+      box-shadow: -1px 5px 40px rgba(0, 0, 0, 0.7);
+
       border-radius: 50%;
       position: absolute;
-      top: 50%;
+      top: 10%;
       left: 50%;
+      transform: translate(-10%, -50%);
       display: flex;
       justify-content: center;
       align-items: center;
-      mat-spinner {
-      }
     }
   }
 }

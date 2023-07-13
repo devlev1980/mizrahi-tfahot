@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import {
   BehaviorSubject,
+  delay,
   filter,
   map,
   Observable,
@@ -21,6 +22,7 @@ export class ApiService {
 
   getAllDogs(): Observable<Dog> {
     return this.http.get<Dogs>(`${environment.serverUrl}/breeds/list/all`).pipe(
+      delay(3000),
       map((value) => value.message),
       tap((dogs) => {
         this.dogs.next(dogs);

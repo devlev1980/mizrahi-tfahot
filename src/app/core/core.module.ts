@@ -4,7 +4,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MaterialModule } from '../material.module';
 import { RouterLink } from '@angular/router';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { LoaderInterceptor } from '../interceptors/loader.interceptor';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],

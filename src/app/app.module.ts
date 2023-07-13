@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { ApiService } from './core/services/api.service';
 import { MaterialModule } from './material.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoaderInterceptor } from './interceptors/loader.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +23,14 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     CoreModule,
     MaterialModule,
   ],
-  providers: [ApiService],
   bootstrap: [AppComponent],
+  providers: [
+    ApiService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoaderInterceptor,
+      multi: true,
+    },
+  ],
 })
 export class AppModule {}

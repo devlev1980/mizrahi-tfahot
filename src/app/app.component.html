@@ -4,7 +4,13 @@
   </header>
   <main class="main">
     <router-outlet></router-outlet>
+    <div class="spinner" *ngIf="loaderService.isLoading$ | async">
+      <div class="wrapper">
+        <mat-spinner [diameter]="40" [color]="'warn'"></mat-spinner>
+      </div>
+    </div>
   </main>
+
   <footer class="footer">
     <app-footer></app-footer>
   </footer>

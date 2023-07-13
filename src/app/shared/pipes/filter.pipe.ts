@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Dog } from '../features/home/models/dog-kind';
+import { Dog } from '../../features/home/models/dog-kind';
 
 @Pipe({
   name: 'filter',
