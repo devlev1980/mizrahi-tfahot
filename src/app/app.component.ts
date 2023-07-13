@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   constructor(private api: ApiService, public loaderService: LoaderService) {}
 
   ngOnInit() {
+    this.isLoading$ = this.loaderService.isLoading$;
     this.api.getAllDogs().subscribe();
   }
 }
