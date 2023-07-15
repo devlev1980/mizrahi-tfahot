@@ -1,0 +1,48 @@
+@use "src/assets/styles/colors" as col;
+@use "src/assets/styles/mixins" as mix;
+@import "src/assets/styles/media";
+
+:host {
+  height: 100%;
+  display: block;
+}
+
+.dialog-container {
+  width: 100%;
+  background: col.$secondary;
+  height: 100%;
+  @include mix.flex-center;
+  align-items: center;
+  .dialog-header {
+    padding: mix.pxToRem(24);
+    position: absolute;
+    top: -10px;
+    left: -10px;
+
+    .close-btn {
+      width: 40px;
+      height: 40px;
+      border: 2px solid col.$white;
+      border-radius: 50%;
+      @include mix.flex-center;
+      cursor: pointer;
+
+      .mat-icon {
+        color: col.$white;
+      }
+    }
+  }
+
+  .dialog-content {
+    width: 70%;
+    margin: 50% auto;
+    .img {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      object-fit: cover;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+    }
+  }
+}

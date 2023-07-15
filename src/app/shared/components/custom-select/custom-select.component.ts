@@ -10,7 +10,6 @@ import { CommonModule, KeyValue } from '@angular/common';
 import { MaterialModule } from '../../../material.module';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FilterPipe } from '../../pipes/filter.pipe';
-import { Dog } from '../../../features/home/models/dog-kind';
 
 @Component({
   selector: 'app-custom-select',

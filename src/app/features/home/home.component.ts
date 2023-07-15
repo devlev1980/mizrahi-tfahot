@@ -4,6 +4,8 @@ import { Observable, switchMap } from 'rxjs';
 import { Dog } from './models/dog-kind';
 import { FormGroup } from '@angular/forms';
 import { DogFormService } from './services/dog-form.service';
+import { DialogService } from '../../shared/services/dialog.service';
+import { ThumbnailComponent } from '../../shared/components/thumbnail/thumbnail.component';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +22,8 @@ export class HomeComponent implements OnInit {
   selectedNumber!: Observable<any>;
   constructor(
     private api: ApiService,
-    private dogFormService: DogFormService
+    private dogFormService: DogFormService,
+    private dialogService: DialogService<ThumbnailComponent>
   ) {}
   ngOnInit() {
     this.numberOfDogs = this.#setNumbersOptions();
@@ -30,8 +33,16 @@ export class HomeComponent implements OnInit {
     this.selectedNumber = this.#getImagesByNumber();
   }
 
-  onFullScreen() {
+  onFullScreen(image: any) {
     this.isOnFullScreen = true;
+    this.dialogService.open(ThumbnailComponent, {
+      width: '100%',
+      height: '100%',
+      hasBackdrop: true,
+      data: {
+        image,
+      },
+    });
   }
 
   compareFn() {
@@ -45,7 +56,7 @@ export class HomeComponent implements OnInit {
   #getImagesByNumber(): Observable<string> {
     return this.form.controls['numberOfCards'].valueChanges;
   }
-  #setNumbersOptions() {
+  #setNumbersOptions(): string[] {
     return [...Array(50)].map((_, index) => `${index++}`);
   }
 }

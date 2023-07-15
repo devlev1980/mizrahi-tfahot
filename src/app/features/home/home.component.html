@@ -21,7 +21,7 @@
   <div *ngIf="images | async as images" class="dog-images">
     <div
       *ngFor="let image of images | slice : 1 : (selectedNumber | async)"
-      (click)="onFullScreen()"
+      (click)="onFullScreen(image)"
       class="image"
     >
       <img [src]="image ? image : ''" alt="" />

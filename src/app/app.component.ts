@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ApiService } from './core/services/api.service';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, take } from 'rxjs';
 import { LoaderService } from './services/loader.service';
 
 @Component({
@@ -16,6 +16,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.isLoading$ = this.loaderService.isLoading$;
-    this.api.getAllDogs().subscribe();
+    this.api.getAllDogs().pipe(take(1)).subscribe();
   }
 }
