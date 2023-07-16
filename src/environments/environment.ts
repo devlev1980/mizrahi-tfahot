@@ -1,3 +1,4 @@
 export const environment = {
-  serverUrl: 'https://dog.ceo/api'
+  production: false,
+  serverUrl: 'https://dog.ceo/api',
 };

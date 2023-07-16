@@ -4,7 +4,6 @@ import { environment } from '../../../environments/environment';
 import {
   BehaviorSubject,
   delay,
-  filter,
   map,
   Observable,
   shareReplay,
